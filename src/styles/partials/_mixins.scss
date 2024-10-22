@@ -1,0 +1,79 @@
+@use '../../styles/partials/variables' as *;
+
+@mixin tablet {
+    @media (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: 1280px) {
+        @content;
+    }
+}
+
+
+
+
+
+
+@mixin font-face($weight) {
+    font-family: 'Avenir Next';
+    font-weight: $weight;
+}
+
+
+@mixin page-header-desktop {
+    @include font-face($bold-weight);
+    font-size: 33px;
+    line-height: 44px;
+}
+
+@mixin page-header-mobile {
+    @include font-face($bold-weight);
+    font-size: 24px;
+    line-height: 32px;
+}
+
+@mixin section-header {
+    @include font-face($bold-weight);
+    font-size: 12px;
+    line-height: 20px;
+}
+
+@mixin subheader {
+    @include font-face($bold-weight);
+    font-size: 14px;
+    line-height: 22px;
+
+    @media (max-width: 767px) {
+        font-size: 13px;
+        line-height: 18px;
+    }
+}
+
+@mixin body-copy {
+    @include font-face($regular-weight);
+    font-size: 14px;
+    line-height: 22px;
+
+    @media (max-width: 767px) {
+        font-size: 13px;
+        line-height: 18px;
+    }
+}
+
+@mixin labels-buttons {
+    @include font-face($bold-weight);
+    font-size: 12px;
+    line-height: 20px;
+
+    @media (max-width: 767px) {
+        font-size: 10px;
+    }
+}
+
+
+
+
+
