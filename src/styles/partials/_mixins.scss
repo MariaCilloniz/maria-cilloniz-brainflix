@@ -13,10 +13,6 @@
 }
 
 
-
-
-
-
 @mixin font-face($weight) {
     font-family: 'Avenir Next';
     font-weight: $weight;
@@ -43,33 +39,34 @@
 
 @mixin subheader {
     @include font-face($bold-weight);
-    font-size: 14px;
-    line-height: 22px;
+    font-size: 13px;
+    line-height: 18px;
+    
 
-    @media (max-width: 767px) {
-        font-size: 13px;
-        line-height: 18px;
+    @include tablet {
+        font-size: 14px;
+        line-height: 22px;
     }
 }
 
 @mixin body-copy {
     @include font-face($regular-weight);
-    font-size: 14px;
-    line-height: 22px;
+    font-size: 13px;
+    line-height: 18px;
 
-    @media (max-width: 767px) {
-        font-size: 13px;
-        line-height: 18px;
+    @include tablet {
+        font-size: 14px;
+        line-height: 22px;
     }
 }
 
 @mixin labels-buttons {
-    @include font-face($bold-weight);
-    font-size: 12px;
+    @include font-face($demi-weight);
+    font-size: 10px;
     line-height: 20px;
 
-    @media (max-width: 767px) {
-        font-size: 10px;
+    @include tablet {
+        font-size: 12px;
     }
 }
 

@@ -1,0 +1,38 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+
+.comments {
+    padding: 1rem 0;
+}
+.comment {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid $mercury;
+    
+    &__avatar {
+        width: 2.5rem; // 40px
+        height: 2.5rem; // 40px
+        border-radius: 50%;
+        background-color: $mercury;
+    }
+    
+    &__name {
+        @include subheader;
+        color: $brainflix-black;
+        margin: 0;
+    }
+    
+    &__date {
+        @include body-copy;
+        color: $silver;
+    }
+    
+    &__text {
+        @include body-copy;
+        color: $brainflix-black;
+        margin: 0;
+    }
+}

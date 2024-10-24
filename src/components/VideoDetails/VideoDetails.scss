@@ -1,0 +1,124 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.video {
+    &__player {
+        background-color: $brainflix-darkblack;
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16/9;
+    }
+
+    &__content {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__info {
+        padding: 24px 16px;
+
+        // @media (min-width: 768px) {  // Tablet
+        //   padding: 36px 36px;
+        // }
+
+        // @media (min-width: 1280px) { // Desktop
+        //   padding: 36px 0;
+        //   max-width: 1020px;
+        //   margin: 0 auto;
+        // }
+    }
+
+    &__title {
+        font-size: 24px;
+        line-height: 32px;
+        font-weight: 700;
+        color: #323232; // BrainFlix-Black
+        margin-bottom: 16px;
+
+        // @media (min-width: 768px) {
+        //   font-size: 33px;
+        //   line-height: 44px;
+        // }
+    }
+
+    &__details {
+        border-top: 1px solid $mercury; // Mercury color
+        border-bottom: 1px solid #E1E1E1;
+        padding: 16px 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        // @media (min-width: 768px) {
+        //   flex-direction: row;
+        //   justify-content: space-between;
+        //   padding: 24px 0;
+        // }
+    }
+
+    &__data {
+        display: flex;
+        flex-direction: column;
+
+        // @media (min-width: 768px) {
+        //   flex-direction: row;
+        //   gap: 24px;
+        // }
+    }
+
+    &__author {
+        font-size: 13px;
+        line-height: 18px;
+        font-weight: 700;
+        color: #323232; // BrainFlix-Black
+
+        @media (min-width: 768px) {
+            font-size: 14px;
+            line-height: 22px;
+        }
+    }
+
+    &__date {
+        font-size: 13px;
+        line-height: 18px;
+        color: #AFAFAF; // Silver
+
+        @media (min-width: 768px) {
+            font-size: 14px;
+            line-height: 22px;
+        }
+    }
+
+    &__stats {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        padding: 12px 24px 0px 0px;
+        color: $silver;
+    }
+
+    &__views,
+    &__likes {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    img {
+        width: 24px;
+        height: 24px;
+        filter: brightness(0) invert(0.7); // Makes the icon silver to match text
+    }
+
+    span {
+        @include body-copy;
+    }
+
+    &__description {
+        margin-top: 16px;
+        font-size: 13px;
+        line-height: 18px;
+        color: #323232; // BrainFlix-Black
+    }
+}
