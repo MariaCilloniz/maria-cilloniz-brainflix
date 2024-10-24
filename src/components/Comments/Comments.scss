@@ -3,22 +3,34 @@
 
 
 .comments {
-    padding: 1rem 0;
+    padding: 1rem;
 }
 .comment {
-    display: grid;
-    grid-template-columns: auto 1fr;
+    display: flex;
     gap: 1rem;
     padding: 1rem 0;
     border-bottom: 1px solid $mercury;
     
     &__avatar {
-        width: 2.5rem; // 40px
-        height: 2.5rem; // 40px
+        width: 2.5rem; 
+        height: 2.5rem; 
+        flex-shrink: 0;
         border-radius: 50%;
         background-color: $mercury;
     }
     
+    &__details {
+        flex-grow: 1;
+    }
+
+    &__info {
+        display: flex;
+        justify-content: space-between;
+        gap: 0.5rem; 
+        align-items: center;
+        margin-bottom: 0.5rem; 
+    }
+
     &__name {
         @include subheader;
         color: $brainflix-black;

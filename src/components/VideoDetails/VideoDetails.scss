@@ -60,6 +60,7 @@
     &__data {
         display: flex;
         flex-direction: column;
+        gap: 14px;
 
         // @media (min-width: 768px) {
         //   flex-direction: row;
@@ -93,8 +94,8 @@
     &__stats {
         display: flex;
         flex-direction: column;
-        gap: 24px;
-        padding: 12px 24px 0px 0px;
+        gap: 8px;
+        padding: 0px 24px 0px 0px;
         color: $silver;
     }
 
