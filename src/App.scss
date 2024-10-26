@@ -9,12 +9,12 @@
 }
 
 .main {
-    @include tablet{
+    @include tablet {
         padding: 0 36px;
     }
 
     @include desktop {
-        display: flex; 
+        display: flex;
         padding: 8px 80px;
         gap: 1px;
     }
@@ -24,12 +24,16 @@
             padding-left: 0;
         }
     }
-    &__sidebar{
-        border-left: 1px solid $mercury;
+
+    &__sidebar {
+        @include desktop{
+            border-left: 1px solid $mercury;
+        }
+        
     }
 
 
-.suggestions {
+    .suggestions {
         @include desktop {
             width: 340px;
             padding: 2rem 1rem;
@@ -37,49 +41,3 @@
         }
     }
 }
-
-
-//     width: 100%;
-
-//     @include desktop {
-//         flex: 1;
-//         max-width: 856px;
-//     }
-// }
-
-// &__sidebar {
-//     width: 100%;
-
-//     @include desktop {
-//         width: 380px;
-//     }
-// }
-
-
-
-//     &__content {
-//         width: 100%; // Full width on mobile
-
-//         @include tablet {
-//             flex: 1; // Takes up remaining space
-//             max-width: 712px;
-//         }
-
-//         @include desktop {
-//             max-width: 856px;
-//             flex: 1;
-//         }
-//     }
-
-//     &__sidebar {
-//         width: 100%; // Full width on mobile
-
-//         @include tablet {
-//             width: 320px; // Fixed width for sidebar
-//         }
-
-//         @include desktop {
-//             width: 380px;
-//         }
-//     }
-// }

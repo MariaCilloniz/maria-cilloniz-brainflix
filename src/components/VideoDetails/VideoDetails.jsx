@@ -12,12 +12,6 @@ function VideoDetails ({ videoDetails = {} }) {
 
     return (
         <section className="video">
-            {/* <div className="video__player">
-                <video className="video__content" controls poster={videoDetails.image}>
-                    <source src={videoDetails.video} type="video/mp4" />
-                </video>
-            </div> */}
-
             <div className="video__info">
                 <h1 className="video__title">{videoDetails.title}</h1>
                 

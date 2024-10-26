@@ -12,24 +12,19 @@
         background-color: $mercury;
         display: none;
 
-
         @media (min-width: 768px) {
             display: inline-flex;
-            
-            
+            width: 40px;
+            height: 40px;
         }
 
         &-container {
-            
-            @include tablet{
+
+            @include tablet {
                 padding-right: 16px;
                 padding-left: 24px;
+
             }
         }
-
-        //     @media (min-width: 768px) {
-        //         display: block;
-        //     }
-        // }
     }
 }
