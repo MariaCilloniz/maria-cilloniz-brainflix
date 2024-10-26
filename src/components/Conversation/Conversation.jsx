@@ -2,8 +2,15 @@ import "../Conversation/Conversation.scss"
 import ConversationIcon from "../../assets/Icons/add_comment.svg"
 import UserAvatar from "../../assets/Images/Mohan-muruge.jpg";
 
-function Conversation() {
-    const commentCount = 3
+function Conversation({ comments }) {
+    let commentCount;
+    
+    if (comments) {
+        commentCount = comments.length;
+    } else {
+        commentCount = 0;
+    }
+    
     return (
         <section className="conversation">
             <h2 className="conversation__count">{commentCount} Comments</h2>

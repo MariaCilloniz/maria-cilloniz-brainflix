@@ -111,5 +111,10 @@
         @include body-copy;
         margin-top: 1rem;
         color: $brainflix-black;
+        
+        @include desktop{
+            padding-right: 16px;
+        }
     }
+    
 }

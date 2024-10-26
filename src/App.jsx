@@ -29,7 +29,7 @@ function App() {
       <div className="main">
         <div className="main__content">
           <VideoDetails videoDetails={selectedVideo} />
-          <Conversation />
+          <Conversation comments={selectedVideo.comments} />
           <Comments data={comments} />
         </div>
         <div className="main__sidebar">
