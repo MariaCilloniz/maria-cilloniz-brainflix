@@ -3,7 +3,7 @@ import './NextVideoCard.scss';
 function NextVideoCard({ image, title, channel, onClick }) {
     return (
         <article className="suggestion" onClick={onClick}>
-            <div className="suggestion__thumb">
+            <div className="suggestion__info">
                 <img
                     src={image}
                     alt={title}

@@ -1,0 +1,35 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+
+.header {
+
+    &__avatar {
+        width: 2.25rem;
+        height: 2.25rem;
+        border-radius: 50%;
+        object-fit: cover;
+        background-color: $mercury;
+        display: none;
+
+
+        @media (min-width: 768px) {
+            display: inline-flex;
+            
+            
+        }
+
+        &-container {
+            
+            @include tablet{
+                padding-right: 16px;
+                padding-left: 24px;
+            }
+        }
+
+        //     @media (min-width: 768px) {
+        //         display: block;
+        //     }
+        // }
+    }
+}

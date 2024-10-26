@@ -12,6 +12,7 @@ function SearchBar() {
             />
             <input
                 type="search"
+                id="siteSearch"
                 className="header__searchinput"
                 placeholder="Search"
             />

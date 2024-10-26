@@ -4,12 +4,24 @@
 
 .comments {
     padding: 1rem;
+    @include desktop{
+        padding: 0;
+    }
 }
 .comment {
     display: flex;
     gap: 1rem;
     padding: 1rem 0;
-    border-bottom: 1px solid $mercury;
+    border-bottom: 0.0625rem solid $mercury;
+
+    @include desktop{
+        gap: 2rem;
+        padding: 2rem 16px 2rem 0;
+    }
+
+    &:first-child {
+        border-top: 0.0625rem solid $mercury;
+    }
     
     &__avatar {
         width: 2.5rem; 

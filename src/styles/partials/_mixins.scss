@@ -7,7 +7,7 @@
 }
 
 @mixin desktop {
-    @media (min-width: 1280px) {
+    @media (min-width: 1024px) {
         @content;
     }
 }
@@ -32,16 +32,16 @@
 }
 
 @mixin section-header {
-    @include font-face($bold-weight);
+    @include font-face($demi-weight);
     font-size: 12px;
     line-height: 20px;
 }
 
 @mixin subheader {
-    @include font-face($bold-weight);
+    @include font-face($demi-weight);
     font-size: 13px;
     line-height: 18px;
-    
+
 
     @include tablet {
         font-size: 14px;
@@ -52,7 +52,7 @@
 @mixin body-copy {
     @include font-face($regular-weight);
     font-size: 13px;
-    line-height: 18px;
+    line-height: 20px;
 
     @include tablet {
         font-size: 14px;
@@ -62,15 +62,10 @@
 
 @mixin labels-buttons {
     @include font-face($demi-weight);
-    font-size: 10px;
+    font-size: 12.5px;
     line-height: 20px;
 
     @include tablet {
         font-size: 12px;
     }
 }
-
-
-
-
-

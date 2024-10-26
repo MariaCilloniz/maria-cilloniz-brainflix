@@ -1,5 +1,4 @@
 import React from 'react';
-import Comments from "../Comments/Comments";
 import "./VideoDetails.scss";
 import LikeIcon from "../../assets/Icons/likes.svg";
 import ViewsIcon from "../../assets/Icons/views.svg";
@@ -13,12 +12,11 @@ function VideoDetails ({ videoDetails = {} }) {
 
     return (
         <section className="video">
-            <div className="video__player">
-                {/* Video player would go here */}
+            {/* <div className="video__player">
                 <video className="video__content" controls poster={videoDetails.image}>
                     <source src={videoDetails.video} type="video/mp4" />
                 </video>
-            </div>
+            </div> */}
 
             <div className="video__info">
                 <h1 className="video__title">{videoDetails.title}</h1>

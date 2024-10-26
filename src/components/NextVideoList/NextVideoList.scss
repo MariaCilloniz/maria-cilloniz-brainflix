@@ -2,14 +2,12 @@
 @use '../../styles/partials/mixins' as *;
 
 .suggestions {
-    padding: 0 16px;
+    padding: 0 1rem;
 
     &__title {
-        font-size: 12px;
-        line-height: 20px;
-        font-weight: 700;
-        color: $brainflix-black;
-        margin-bottom: 24px;
+        @include section-header;
+        color: $silver;
+        margin-bottom: 1rem;
         text-transform: uppercase;
     }
 }

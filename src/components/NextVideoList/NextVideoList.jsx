@@ -2,19 +2,20 @@ import './NextVideoList.scss';
 import NextVideoCard from "../NextVideoCard/NextVideoCard"
 
 
-function NextVideoList({ videoList, selectedVideo, onVideoSelect }) {
-    const filteredVideos = videoList.filter(video => video.id !== selectedVideo.id);
+function NextVideoList({ videos, handleVideoSelect }) {
+
+    
     return (
         <section className="suggestions">
             <h2 className="suggestions__title">Next Videos</h2>
 
-            {filteredVideos.map((video) => (
+            {videos.map((video) => (
                 <NextVideoCard
                     key={video.id}
                     image={video.image}
                     title={video.title}
                     channel={video.channel}
-                    onClick={() => onVideoSelect(video)}
+                    onClick={() => handleVideoSelect(video)}
                 />
             ))}
         </section>

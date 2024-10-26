@@ -6,27 +6,38 @@ import Comments from "./components/Comments/Comments";
 import videoData from "./assets/Data/video-details.json";
 import VideoDetails from "./components/VideoDetails/VideoDetails";
 import NextVideoList from './components/NextVideoList/NextVideoList';
-
+import Conversation from './components/Conversation/Conversation';
+import VideoPlayer from './components/VideoPlayer/VideoPlayer';
 
 
 function App() {
-  const [selectedVideo, setSelectedVideo] = useState(videoData[0]); 
+  const [selectedVideo, setSelectedVideo] = useState(videoData[0]);
   const { comments } = selectedVideo;
 
-  // const [videoList, setVideoList] = useState(videoData);
   const handleVideoSelect = (video) => {
     setSelectedVideo(video);
   };
 
+  const filteredVideos = videoData.filter(video => video.id !== selectedVideo.id);
+
+
   return (
     <>
       <Header />
-      <VideoDetails videoDetails={selectedVideo} />
-
-      <Comments data= {comments} />
-      <NextVideoList videoList={videoData}
-      selectedVideo = {selectedVideo}
-      onVideoSelect= {handleVideoSelect} />
+      <VideoPlayer videoDetails={selectedVideo} />
+      {/* <VideoDetails videoDetails={selectedVideo} /> */}
+      <div className="main">
+        <div className="main__content">
+          <VideoDetails videoDetails={selectedVideo} />
+          <Conversation />
+          <Comments data={comments} />
+        </div>
+        <div className="main__sidebar">
+          <NextVideoList
+            videos={filteredVideos}
+            handleVideoSelect={handleVideoSelect} />
+        </div>
+      </div>
 
     </>
   )

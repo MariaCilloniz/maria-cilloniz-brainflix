@@ -2,114 +2,105 @@
 @use '../../styles/partials/mixins' as *;
 
 .video {
-    &__player {
-        background-color: $brainflix-darkblack;
-        position: relative;
-        width: 100%;
-        aspect-ratio: 16/9;
-    }
-
-    &__content {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
+    width: 100%;
 
     &__info {
-        padding: 24px 16px;
+        padding: 1.5rem 1rem;
 
-        // @media (min-width: 768px) {  // Tablet
-        //   padding: 36px 36px;
-        // }
+        @include tablet {
+            padding: 24px 16px;
+        }
 
-        // @media (min-width: 1280px) { // Desktop
-        //   padding: 36px 0;
-        //   max-width: 1020px;
-        //   margin: 0 auto;
-        // }
+        @include desktop {
+            padding: 2.25rem 0;
+            margin: 0 auto;
+        }
     }
 
     &__title {
-        font-size: 24px;
-        line-height: 32px;
-        font-weight: 700;
-        color: #323232; // BrainFlix-Black
-        margin-bottom: 16px;
+        @include page-header-mobile;
+        font-weight: 600;
+        color: $brainflix-black;
+        margin-bottom: 1rem;
 
-        // @media (min-width: 768px) {
-        //   font-size: 33px;
-        //   line-height: 44px;
-        // }
+        @include tablet {
+            @include page-header-desktop;
+            margin-bottom: 0;
+        }
     }
 
     &__details {
-        border-top: 1px solid $mercury; // Mercury color
-        border-bottom: 1px solid #E1E1E1;
-        padding: 16px 0;
+        border-top: 0.0625rem solid $mercury;
+        border-bottom: 0.0625rem solid $mercury;
+        padding: 1rem 0;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
 
-        // @media (min-width: 768px) {
-        //   flex-direction: row;
-        //   justify-content: space-between;
-        //   padding: 24px 0;
-        // }
+        @include tablet {
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-top: 0;
+        }
     }
 
     &__data {
         display: flex;
         flex-direction: column;
-        gap: 14px;
+        gap: 0.875rem;
 
-        // @media (min-width: 768px) {
-        //   flex-direction: row;
-        //   gap: 24px;
-        // }
+        @include tablet {
+            flex-direction: row;
+            gap: 1.5rem;
+        }
     }
 
     &__author {
-        font-size: 13px;
-        line-height: 18px;
-        font-weight: 700;
-        color: #323232; // BrainFlix-Black
+        @include body-copy;
+        font-weight: 600;
+        color: $brainflix-black;
 
-        @media (min-width: 768px) {
-            font-size: 14px;
-            line-height: 22px;
+        @include tablet {
+            @include body-copy;
+            font-weight: 600;
+
         }
     }
 
     &__date {
-        font-size: 13px;
-        line-height: 18px;
-        color: #AFAFAF; // Silver
+        @include body-copy;
+        color: $silver;
 
-        @media (min-width: 768px) {
-            font-size: 14px;
-            line-height: 22px;
+        @include tablet {
+            @include body-copy
         }
     }
 
     &__stats {
         display: flex;
         flex-direction: column;
-        gap: 8px;
-        padding: 0px 24px 0px 0px;
+        gap: 0.5rem;
+        padding: 0rem 1.5rem 0rem 0rem;
         color: $silver;
+
+        @include tablet {
+            display: flex;
+            flex-direction: row;
+            gap: 3.5rem;
+        }
     }
 
     &__views,
     &__likes {
         display: flex;
         align-items: center;
-        gap: 8px;
+        gap: 0.5rem;
     }
 
     img {
-        width: 24px;
-        height: 24px;
-        filter: brightness(0) invert(0.7); // Makes the icon silver to match text
+        width: 1.5rem;
+        height: 1.5rem;
     }
 
     span {
@@ -117,9 +108,8 @@
     }
 
     &__description {
-        margin-top: 16px;
-        font-size: 13px;
-        line-height: 18px;
-        color: #323232; // BrainFlix-Black
+        @include body-copy;
+        margin-top: 1rem;
+        color: $brainflix-black;
     }
 }
