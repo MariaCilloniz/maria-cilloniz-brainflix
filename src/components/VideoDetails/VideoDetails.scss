@@ -8,7 +8,7 @@
         padding: 1.5rem 1rem;
 
         @include tablet {
-            padding: 24px 16px;
+            padding: 1.5rem 1rem;
         }
 
         @include desktop {
@@ -19,8 +19,8 @@
 
     &__title {
         @include page-header-mobile;
-        font-weight: 600;
         color: $brainflix-black;
+        font-weight: 600;
         margin-bottom: 1rem;
 
         @include tablet {
@@ -58,8 +58,8 @@
 
     &__author {
         @include body-copy;
-        font-weight: 600;
         color: $brainflix-black;
+        font-weight: 600;
 
         @include tablet {
             @include body-copy;
@@ -78,11 +78,11 @@
     }
 
     &__stats {
+        color: $silver;
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
         padding: 0rem 1.5rem 0rem 0rem;
-        color: $silver;
 
         @include tablet {
             display: flex;
@@ -109,12 +109,14 @@
 
     &__description {
         @include body-copy;
-        margin-top: 1rem;
         color: $brainflix-black;
-        
-        @include desktop{
-            padding-right: 16px;
+        margin-top: 1rem;
+
+
+
+        @include desktop {
+            padding-right: 1rem;
         }
     }
-    
+
 }

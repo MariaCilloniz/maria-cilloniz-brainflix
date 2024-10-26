@@ -41,7 +41,7 @@
             border: 0.125rem solid $brainflix-blue;
         }
         &:not(:placeholder-shown) {
-            border: 1px solid $mercury;
+            border: 0.0625rem solid $mercury;
         }
     }
 
@@ -53,7 +53,7 @@
         object-fit: cover;
         background-color: $mercury;
 
-        @media (min-width: 768px) {
+        @include tablet {
             display: none;
         }
 
