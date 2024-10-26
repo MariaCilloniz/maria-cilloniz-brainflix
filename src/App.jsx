@@ -25,7 +25,6 @@ function App() {
     <>
       <Header />
       <VideoPlayer videoDetails={selectedVideo} />
-      {/* <VideoDetails videoDetails={selectedVideo} /> */}
       <div className="main">
         <div className="main__content">
           <VideoDetails videoDetails={selectedVideo} />
