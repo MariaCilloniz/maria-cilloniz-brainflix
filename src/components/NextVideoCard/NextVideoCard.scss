@@ -1,0 +1,41 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.suggestion {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+
+    &__info {
+        width: 7.5rem;
+        height: 4.375rem;
+        flex-shrink: 0;
+        background-color: $mercury;
+    }
+
+    &__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 0.25rem;
+    }
+
+    &__details {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    &__title {
+        @include subheader;
+        color: $brainflix-black;
+        margin: 0 0 0.5rem 0;
+    }
+
+    &__author {
+        @include body-copy;
+        color: $brainflix-black;
+        margin: 0;
+    }
+
+}

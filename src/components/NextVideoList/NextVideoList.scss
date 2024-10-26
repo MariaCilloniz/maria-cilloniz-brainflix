@@ -1,0 +1,13 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.suggestions {
+    padding: 0 1rem;
+
+    &__title {
+        @include section-header;
+        color: $silver;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+    }
+}
