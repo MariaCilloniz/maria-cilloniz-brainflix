@@ -3,7 +3,7 @@ import './App.scss';
 import { useState } from 'react';
 import Header from "./components/Header/Header";
 import Comments from "./components/Comments/Comments";
-import videoData from "./assets/Data/video-details.json";
+import videoData from "../src/data/video-details.json";
 import VideoDetails from "./components/VideoDetails/VideoDetails";
 import NextVideoList from './components/NextVideoList/NextVideoList';
 import Conversation from './components/Conversation/Conversation';
