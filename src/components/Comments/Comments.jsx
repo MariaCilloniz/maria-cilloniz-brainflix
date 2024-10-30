@@ -4,9 +4,7 @@ import "../Comments/Comments.scss";
 
 
 
-function Comments({ data }) {
-    console.log("comments data", data);
-
+function Comments({ data = [] }) {
     const formatDate = (timestamp) => {
         const date = new Date(timestamp);
         return date.toLocaleDateString();

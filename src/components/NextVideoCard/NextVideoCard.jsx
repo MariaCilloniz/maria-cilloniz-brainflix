@@ -1,8 +1,9 @@
 import './NextVideoCard.scss';
 
-function NextVideoCard({ image, title, channel, onClick }) {
+function NextVideoCard({ image, title, channel }) {
+
     return (
-        <article className="suggestion" onClick={onClick}>
+        <article className="suggestion">
             <div className="suggestion__info">
                 <img
                     src={image}
