@@ -1,13 +1,14 @@
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import './UploadPage.scss';
-import thumbnail from '../../assets/Images/Upload-video-preview.jpg';
+import Thumbnail from '../../assets/Images/Upload-video-preview.jpg';
 import UploadBtnIcon from "../../assets/Icons/publish.svg"
 
 function UploadPage() {
     const navigate = useNavigate();
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
+    const [isPublished, setIsPublished] = useState(false);
 
     const handleChangeTitle = (event) => {
         setTitle(event.target.value);
@@ -17,14 +18,14 @@ function UploadPage() {
     };
 
     const isTitleValid = () => {
-        if (title === "") return true; 
+        if (!isPublished && title === "") return true; 
         if (title.length < 3) {
             return false;
         }
         return true;
     };
     const isDescriptionValid = () => {
-        if (description === "") return true;
+        if (!isPublished && description === "") return true;
         if (description.length < 10) {
             return false;
         }
@@ -33,6 +34,7 @@ function UploadPage() {
 
     const isFormValid = () => {
         if (!title || !description) {
+            alert("Please fill in the form");
             return false;
         }
         if (!isTitleValid()) {
@@ -40,7 +42,7 @@ function UploadPage() {
             return false;
         }
         if (!isDescriptionValid()) {
-            alert("The decsription needs 10 or more characters")
+            alert("The description needs 10 or more characters")
             return false;
         }
         return true;
@@ -48,6 +50,7 @@ function UploadPage() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        setIsPublished(true);
 
         if (isFormValid()) {
             alert('Upload successful!');
@@ -65,7 +68,7 @@ function UploadPage() {
                     <h2 className="upload__label">Video thumbnail</h2>
                     <div className="upload__preview">
                         <img
-                            src={thumbnail}
+                            src={Thumbnail}
                             alt="Upload video thumbnail"
                         />
                     </div>

@@ -18,45 +18,45 @@ function HomePage() {
     const { id } = useParams();
     const navigate = useNavigate();
 
+    const fetchVideoDetails = async (videoId) => {
+
+        try {
+            const response = await axios.get(
+                `${API_URL}/videos/${videoId}?api_key=${API_KEY}`
+            );
+            setSelectedVideo(response.data);
+        } catch (error) {
+            console.error("Error fetching video details", error);
+            navigate('/');
+        }
+    };
+
+    const fetchAllVideos = async () => {
+        try {
+            const response = await axios.get(`${API_URL}/videos?api_key=${API_KEY}`);
+            setVideos(response.data);
+
+            if (!id && response.data.length > 0) {
+                await fetchVideoDetails(response.data[0].id);
+            }
+        } catch (error) {
+            if (error.response?.status === 404) {
+                console.error("No video with that id exists");
+            } else {
+                console.error("Error fetching videos", error);
+            }
+        }
+    }
 
     useEffect(() => {
-        const fetchAllVideos = async () => {
-            try {
-                const response = await axios.get(`${API_URL}/videos?api_key=${API_KEY}`);
-                setVideos(response.data);
-
-                if (!id && response.data.length > 0) {
-                    navigate(`/videos/${response.data[0].id}`);
-                }
-            } catch (error) {
-                if (error.response?.status === 404) {
-                    console.error("No video with that id exists");
-                } else {
-                    console.error("Error fetching videos", error);
-                }
-            }
-        };
-
         fetchAllVideos();
     }, []);
 
     useEffect(() => {
-        const fetchVideoDetails = async () => {
-            if (!id) return;
-
-            try {
-                const response = await axios.get(
-                    `${API_URL}/videos/${id}?api_key=${API_KEY}`
-                );
-                setSelectedVideo(response.data);
-            } catch (error) {
-                console.error("Error fetching video details", error);
-                navigate('/');
-            }
-        };
-
-        fetchVideoDetails();
-    }, [id, navigate]);
+        if (id) {
+            fetchVideoDetails(id);
+        }
+    }, [id]);
 
 
     const filteredVideos = videos.filter(video => selectedVideo && video.id !== selectedVideo.id)

@@ -28,15 +28,16 @@
     }
 
     &__title {
-        @include subheader;
         color: $brainflix-black;
         margin: 0 0 0.5rem 0;
+        @include subheader;
     }
 
     &__author {
-        @include body-copy;
         color: $brainflix-black;
         margin: 0;
+        @include body-copy;
+        
     }
 
 }

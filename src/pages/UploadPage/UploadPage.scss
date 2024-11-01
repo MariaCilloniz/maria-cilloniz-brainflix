@@ -40,8 +40,6 @@
         @include desktop {
             display: flex;
             flex-direction: row;
-            // gap: 24px;
-            // max-width: 1020px;
         }
     }
 
@@ -84,9 +82,7 @@
             width: 100%;
             flex-grow: 1;
         }
-
-        @include desktop {
-        }
+        
     }
 
     &__field {
@@ -111,13 +107,6 @@
         font-size: 13px;
         line-height: 18px;
         height: 36px;
-
-        @include tablet {
-            // padding: 16px;
-            // font-size: 14px;
-            // line-height: 22px;
-            // height: 40px;
-        }
 
         &:focus {
             outline: none;
@@ -150,7 +139,7 @@
         }
 
         &--invalid{
-            border: 2px solid red;
+            border: 1px solid $red;
         }
     }
 
@@ -212,9 +201,6 @@
 
             &:hover {
                 background-color: $brainflix-darkblue;
-            }
-            &:disabled {
-                cursor: not-allowed;
             }
         }
 
