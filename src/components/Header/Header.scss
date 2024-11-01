@@ -8,7 +8,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-bottom: 1px solid $mercury;
+    border-bottom: 0.0625rem solid $mercury;
 
     @include tablet {
         flex-direction: row;

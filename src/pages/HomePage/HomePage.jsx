@@ -18,19 +18,6 @@ function HomePage() {
     const { id } = useParams();
     const navigate = useNavigate();
 
-    const fetchVideoDetails = async (videoId) => {
-
-        try {
-            const response = await axios.get(
-                `${API_URL}/videos/${videoId}?api_key=${API_KEY}`
-            );
-            setSelectedVideo(response.data);
-        } catch (error) {
-            console.error("Error fetching video details", error);
-            navigate('/');
-        }
-    };
-
     const fetchAllVideos = async () => {
         try {
             const response = await axios.get(`${API_URL}/videos?api_key=${API_KEY}`);
@@ -48,21 +35,34 @@ function HomePage() {
         }
     }
 
+    const fetchVideoDetails = async (videoId) => {
+        if (!videoId) return;
+
+        try {
+            const response = await axios.get(
+                `${API_URL}/videos/${videoId}?api_key=${API_KEY}`
+            );
+            setSelectedVideo(response.data);
+        } catch (error) {
+            console.error("Error fetching video details", error);
+            navigate('/');
+        }
+    };
+
+
     useEffect(() => {
         fetchAllVideos();
     }, []);
 
     useEffect(() => {
-        if (id) {
-            fetchVideoDetails(id);
-        }
+        fetchVideoDetails(id);
     }, [id]);
 
 
     const filteredVideos = videos.filter(video => selectedVideo && video.id !== selectedVideo.id)
 
     if (!selectedVideo) {
-        return <p>Please Wait...</p>;
+        return <p className="main-page__loading">Please Wait...</p>;
     }
 
     return (

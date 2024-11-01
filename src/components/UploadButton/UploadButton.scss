@@ -3,7 +3,6 @@
 
 .header {
     &__upload {
-        @include labels-buttons;
         display: flex;
         align-items: center;
         justify-content: flex-start;
@@ -16,6 +15,7 @@
         text-decoration: none;
         border-radius: 0.25rem;
         cursor: pointer;
+        @include labels-buttons;
 
         @include tablet {
             gap: 2.3125rem;

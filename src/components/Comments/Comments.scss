@@ -55,19 +55,19 @@
     }
 
     &__name {
-        @include subheader;
         color: $brainflix-black;
         margin: 0;
+        @include subheader;
     }
     
     &__date {
-        @include body-copy;
         color: $silver;
+        @include body-copy;
     }
     
     &__text {
-        @include body-copy;
         color: $brainflix-black;
         margin: 0;
+        @include body-copy;
     }
 }

@@ -1,0 +1,9 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.main-page__loading {
+    @include page-header-desktop;                                                  
+    color: $brainflix-blue;                            
+    text-align: center;                        
+    padding: 2rem;                              
+}
