@@ -1,0 +1,225 @@
+@use "../../styles//partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.upload {
+    padding: 1rem;
+
+    @include tablet {
+        padding: 0 3.25rem;
+    }
+
+
+    @include desktop {
+        padding: 0 6rem;
+    }
+
+    &__title {
+        @include page-header-mobile;
+        font-weight: 600;
+        padding: 0.5rem 0 0.5rem;
+
+        @include tablet {
+            font-size: 2.0625rem;
+            line-height: 2.75rem;
+            padding: 2.25rem 0 1.5rem;
+            border-bottom: 0.0625rem solid $mercury;
+        }
+    }
+
+    &__container {
+        padding: 0.5rem 0;
+
+        @include tablet {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            padding: 1.5rem 0;
+            align-items: flex-start;
+        }
+
+        @include desktop {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+        }
+    }
+
+    &__thumbnail {
+        margin-bottom: 1rem;
+
+        @include tablet {
+            margin-bottom: 0;
+            width: 60%;
+        }
+
+        @include desktop {
+            width: 47%;
+        }
+    }
+
+    &__preview {
+        background-color: $mercury;
+        border-radius: 0.25rem;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+    }
+
+    &__label {
+        @include labels-buttons;
+        color: $silver;
+        padding: 0.25rem;
+        line-height: 1.5rem;
+        text-transform: uppercase;
+    }
+
+    &__form {
+        @include tablet {
+            width: 100%;
+            flex-grow: 1;
+        }
+
+    }
+
+    &__field {
+        margin-bottom: 1rem;
+
+        @include tablet {
+            margin-bottom: 1.5rem;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__input {
+        @include body-copy;
+        width: 100%;
+        background-color: $alabaster;
+        border: 0.0625rem solid $mercury;
+        border-radius: 0.25rem;
+        padding: 0.75rem;
+        font-size: 0.8125rem;
+        line-height: 1.125rem;
+        height: 2.25rem;
+
+        &:focus {
+            outline: none;
+            border: 0.125rem solid $brainflix-blue;
+            padding: 0.6875rem;
+
+            @include tablet {
+                padding: 0.9375rem;
+            }
+        }
+
+        &::placeholder {
+            color: $brainflix-black;
+            font-size: 0.9375rem;
+            line-height: 0.9375rem;
+            font-family: 'Avenir Next'
+        }
+
+        &--text {
+            height: 5.5rem;
+            resize: none;
+
+            @include tablet {
+                height: 7.25rem;
+            }
+
+            @include desktop {
+                height: 8.3125rem;
+            }
+        }
+
+        &--invalid {
+            border: 0.0625rem solid $red;
+        }
+    }
+
+    &__actions {
+        padding: 1rem 0;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        @include tablet {
+            flex-direction: row-reverse;
+            justify-content: flex-start;
+            gap: 1.5rem;
+            padding: 1.5rem 0;
+            border-top: 0.0625rem solid $mercury;
+        }
+    }
+
+    &__icon {
+        width: 1.25rem;
+        height: 1.25rem;
+        position: relative;
+        left: 0.8125rem;
+    }
+
+    &__btn {
+        @include labels-buttons;
+        height: 2.5rem;
+        border-radius: 0.25rem;
+        text-transform: uppercase;
+        width: 100%;
+
+
+        @include tablet {
+            gap: 2.3125rem;
+            width: 9.375rem;
+
+        }
+
+        &--primary {
+            display: flex;
+            background-color: $brainflix-blue;
+            color: $white;
+            border: none;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 35%;
+            text-decoration: none;
+            border-radius: 0.25rem;
+            cursor: pointer;
+
+            @include tablet {
+                gap: 28%;
+            }
+
+            &:hover {
+                background-color: $brainflix-darkblue;
+            }
+        }
+
+        &--secondary {
+            background-color: $white;
+            color: $brainflix-blue;
+            border: 0.0625rem solid $white;
+            display: flex;
+            border: none;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 35%;
+            text-decoration: none;
+            border-radius: 0.25rem;
+            cursor: pointer;
+
+
+
+            &:hover {
+                color: $brainflix-darkblue;
+            }
+        }
+
+    }
+}

@@ -6,7 +6,6 @@
         display: flex;
         align-items: center;
         gap: 1rem;
-
     }
 
     &__searchwrap {
@@ -19,11 +18,9 @@
         left: 2.75rem;
         width: 1.25rem;
         height: 1.25rem;
-
     }
 
     &__searchinput {
-        @include body-copy;
         width: 100%;
         height: 2.25rem;
         padding: 0.75rem 0.75rem 0.75rem 2.25rem;
@@ -31,6 +28,7 @@
         border-radius: 0.25rem;
         background-color: $alabaster;
         color: $brainflix-black;
+        @include body-copy;
 
         &::placeholder {
             color: $brainflix-black;
@@ -40,11 +38,11 @@
             outline: none;
             border: 0.125rem solid $brainflix-blue;
         }
+
         &:not(:placeholder-shown) {
             border: 0.0625rem solid $mercury;
         }
     }
-
 
     &__useravatar {
         width: 2.25rem;

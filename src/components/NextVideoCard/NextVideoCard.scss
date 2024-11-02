@@ -6,6 +6,7 @@
     gap: 1rem;
     margin-bottom: 1rem;
 
+
     &__info {
         width: 7.5rem;
         height: 4.375rem;
@@ -27,15 +28,14 @@
     }
 
     &__title {
-        @include subheader;
         color: $brainflix-black;
         margin: 0 0 0.5rem 0;
+        @include subheader;
     }
 
     &__author {
-        @include body-copy;
         color: $brainflix-black;
         margin: 0;
+        @include body-copy;
     }
-
 }
