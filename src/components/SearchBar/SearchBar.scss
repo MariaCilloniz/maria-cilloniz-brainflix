@@ -38,11 +38,11 @@
             outline: none;
             border: 0.125rem solid $brainflix-blue;
         }
+
         &:not(:placeholder-shown) {
             border: 0.0625rem solid $mercury;
         }
     }
-
 
     &__useravatar {
         width: 2.25rem;

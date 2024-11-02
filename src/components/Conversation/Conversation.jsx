@@ -4,13 +4,13 @@ import UserAvatar from "../../assets/Images/Mohan-muruge.jpg";
 
 function Conversation({ comments }) {
     let commentCount;
-    
+
     if (comments) {
         commentCount = comments.length;
     } else {
         commentCount = 0;
     }
-    
+
     return (
         <section className="conversation">
             <h2 className="conversation__count">{commentCount} Comments</h2>
@@ -32,20 +32,20 @@ function Conversation({ comments }) {
                         Join the Conversation
                     </label>
                     <div className="conversation__input-wrapper">
-                    <textarea
-                        id="userComment"
-                        className="conversation__textarea"
-                        placeholder="Add a new comment"
-                    ></textarea>
+                        <textarea
+                            id="userComment"
+                            className="conversation__textarea"
+                            placeholder="Add a new comment"
+                        ></textarea>
 
-                    <button type="submit" className="conversation__button">
-                        <img
-                            src={ConversationIcon}
-                            alt="conversation__icon"
-                            className="conversation__icon"
-                        />
-                        COMMENT
-                    </button>
+                        <button type="submit" className="conversation__button">
+                            <img
+                                src={ConversationIcon}
+                                alt="conversation__icon"
+                                className="conversation__icon"
+                            />
+                            COMMENT
+                        </button>
                     </div>
                 </div>
             </form>

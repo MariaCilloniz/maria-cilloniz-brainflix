@@ -31,7 +31,7 @@
         background-color: $mercury;
         object-fit: cover;
 
-        @include tablet{
+        @include tablet {
             width: 2.5rem;
             height: 2.5rem;
         }
@@ -104,6 +104,7 @@
             font-family: 'Avenir Next'
 
         }
+
         &:not(:placeholder-shown) {
             border: 0.0625rem solid $mercury;
         }

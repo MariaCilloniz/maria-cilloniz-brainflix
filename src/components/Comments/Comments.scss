@@ -4,17 +4,19 @@
 
 .comments {
     padding: 1rem;
-    @include desktop{
+
+    @include desktop {
         padding: 0;
     }
 }
+
 .comment {
     display: flex;
     gap: 1rem;
     padding: 1rem 0;
     border-bottom: 0.0625rem solid $mercury;
 
-    @include desktop{
+    @include desktop {
         gap: 2rem;
         padding: 2rem 1rem 2rem 0;
     }
@@ -27,21 +29,21 @@
         &:last-child {
             border-bottom: transparent;
         }
-}
-    
+    }
+
     &__avatar {
-        width: 2.25rem; 
-        height: 2.25rem; 
+        width: 2.25rem;
+        height: 2.25rem;
         flex-shrink: 0;
         border-radius: 50%;
         background-color: $mercury;
 
         @include tablet {
-            width: 2.5rem; 
+            width: 2.5rem;
             height: 2.5rem
         }
     }
-    
+
     &__details {
         flex-grow: 1;
     }
@@ -49,9 +51,9 @@
     &__info {
         display: flex;
         justify-content: space-between;
-        gap: 0.5rem; 
+        gap: 0.5rem;
         align-items: center;
-        margin-bottom: 0.5rem; 
+        margin-bottom: 0.5rem;
     }
 
     &__name {
@@ -59,12 +61,12 @@
         margin: 0;
         @include subheader;
     }
-    
+
     &__date {
         color: $silver;
         @include body-copy;
     }
-    
+
     &__text {
         color: $brainflix-black;
         margin: 0;

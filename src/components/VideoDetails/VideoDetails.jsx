@@ -4,7 +4,7 @@ import LikeIcon from "../../assets/Icons/likes.svg";
 import ViewsIcon from "../../assets/Icons/views.svg";
 
 
-function VideoDetails ({ videoDetails = {} }) {
+function VideoDetails({ videoDetails = {} }) {
     const formatDate = (timestamp) => {
         const date = new Date(timestamp);
         return date.toLocaleDateString();
@@ -14,21 +14,21 @@ function VideoDetails ({ videoDetails = {} }) {
         <section className="video">
             <div className="video__info">
                 <h1 className="video__title">{videoDetails.title}</h1>
-                
+
                 <div className="video__details">
                     <div className="video__data">
                         <p className="video__author">By {videoDetails.channel}</p>
                         <p className="video__date">{formatDate(videoDetails.timestamp)}</p>
                     </div>
-                    
+
                     <div className="video__stats">
                         <div className="video__views">
                             <img src={ViewsIcon} alt="views" />
                             <span>{videoDetails.views}</span>
                         </div>
                         <div className="video__likes">
-                            <img src={LikeIcon} 
-                            alt="likes" />
+                            <img src={LikeIcon}
+                                alt="likes" />
                             <span>{videoDetails.likes}</span>
                         </div>
                     </div>

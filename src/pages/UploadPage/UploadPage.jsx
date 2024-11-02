@@ -18,7 +18,7 @@ function UploadPage() {
     };
 
     const isTitleValid = () => {
-        if (!isPublished && title === "") return true; 
+        if (!isPublished && title === "") return true;
         if (title.length < 3) {
             return false;
         }
@@ -58,7 +58,6 @@ function UploadPage() {
         }
     };
 
-
     return (
         <div className="upload">
             <h1 className="upload__title">Upload Video</h1>
@@ -73,7 +72,6 @@ function UploadPage() {
                         />
                     </div>
                 </div>
-
                 <form onSubmit={handleSubmit} className="upload__form">
                     <div className="upload__field">
                         <label htmlFor="title" className="upload__label">
@@ -89,7 +87,6 @@ function UploadPage() {
                             onChange={handleChangeTitle}
                         />
                     </div>
-
                     <div className="upload__field">
                         <label htmlFor="description" className="upload__label">
                             Add a video description
@@ -102,12 +99,11 @@ function UploadPage() {
                             onChange={handleChangeDescription}
                         />
                     </div>
-
                     <div className="upload__actions">
                         <button
                             type="submit"
                             className="upload__btn upload__btn--primary"
-                            >
+                        >
                             <img
                                 src={UploadBtnIcon}
                                 alt="Upload Button Icon"

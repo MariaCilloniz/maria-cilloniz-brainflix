@@ -10,7 +10,8 @@
         text-transform: uppercase;
         @include section-header;
     }
-    &__link{
-            text-decoration: none;
+
+    &__link {
+        text-decoration: none;
     }
 }

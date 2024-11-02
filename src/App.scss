@@ -26,18 +26,15 @@
     }
 
     &__sidebar {
-        @include desktop{
+        @include desktop {
             border-left: 1px solid $mercury;
         }
-        
     }
-
 
     .suggestions {
         @include desktop {
             width: 340px;
             padding: 2rem 1rem;
-
         }
     }
 }
