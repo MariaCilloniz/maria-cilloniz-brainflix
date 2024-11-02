@@ -15,7 +15,7 @@ function HomePage() {
 
     const [selectedVideo, setSelectedVideo] = useState(null);
     const [videos, setVideos] = useState([]);
-    const { id } = useParams();
+    const { videoId } = useParams();
     const navigate = useNavigate();
 
     const fetchAllVideos = async () => {
@@ -23,7 +23,7 @@ function HomePage() {
             const response = await axios.get(`${API_URL}/videos?api_key=${API_KEY}`);
             setVideos(response.data);
 
-            if (!id && response.data.length > 0) {
+            if (!videoId && response.data.length > 0) {
                 await fetchVideoDetails(response.data[0].id);
             }
         } catch (error) {
@@ -55,8 +55,8 @@ function HomePage() {
     }, []);
 
     useEffect(() => {
-        fetchVideoDetails(id);
-    }, [id]);
+        fetchVideoDetails(videoId);
+    }, [videoId]);
 
 
     const filteredVideos = videos.filter(video => selectedVideo && video.id !== selectedVideo.id)
