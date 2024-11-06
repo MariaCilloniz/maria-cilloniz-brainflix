@@ -14,7 +14,7 @@ function HomePage() {
 
     const [selectedVideo, setSelectedVideo] = useState(null);
     const [videos, setVideos] = useState([]);
-    const { videoId } = useParams();
+    const { id } = useParams();
     const navigate = useNavigate();
 
     const fetchAllVideos = async () => {
