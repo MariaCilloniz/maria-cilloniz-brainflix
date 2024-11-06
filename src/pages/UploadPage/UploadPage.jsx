@@ -3,6 +3,7 @@ import { useState } from 'react';
 import './UploadPage.scss';
 import Thumbnail from '../../assets/Images/Upload-video-preview.jpg';
 import UploadBtnIcon from "../../assets/Icons/publish.svg"
+import axios from 'axios';
 
 function UploadPage() {
     const navigate = useNavigate();
@@ -48,13 +49,22 @@ function UploadPage() {
         return true;
     };
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
         setIsPublished(true);
 
         if (isFormValid()) {
-            alert('Upload successful!');
-            navigate('/videos');
+            try {
+                const response = await axios.post('http://localhost:3001/videos', {
+                    title,
+                    description
+                });
+                alert('Upload successful!');
+                navigate('/');
+            } catch (error) {
+                console.error('Error uploading video:', error);
+                alert('Failed to upload video. Please try again.');
+            }
         }
     };
 
@@ -114,7 +124,7 @@ function UploadPage() {
                         <button
                             type="button"
                             className="upload__btn upload__btn--secondary"
-                            onClick={() => navigate('/videos')}>
+                            onClick={() => navigate('/')}>
                             <img
                                 src={UploadBtnIcon}
                                 alt="Upload Button Icon"

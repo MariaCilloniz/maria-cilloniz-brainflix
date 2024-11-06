@@ -10,8 +10,7 @@ import axios from 'axios'
 
 
 function HomePage() {
-    const API_URL = "https://unit-3-project-api-0a5620414506.herokuapp.com";
-    const API_KEY = "b4e093c4-0d2f-4acb-b89f-987dc81e2d2c"
+    const API_URL = import.meta.env.VITE_API_URL;
 
     const [selectedVideo, setSelectedVideo] = useState(null);
     const [videos, setVideos] = useState([]);
@@ -20,39 +19,45 @@ function HomePage() {
 
     const fetchAllVideos = async () => {
         try {
-            const response = await axios.get(`${API_URL}/videos?api_key=${API_KEY}`);
+            const response = await axios.get(`${API_URL}/videos`);
             setVideos(response.data);
 
             if (!id && response.data.length > 0) {
-                await fetchVideoDetails(response.data[0].id);
+                fetchVideoDetails(response.data[0].id);
             }
         } catch (error) {
-            if (error.response?.status === 404) {
-                console.error("No video with that id exists");
-            } else {
-                console.error("Error fetching videos", error);
-            }
+            console.error("Error fetching videos", error);
         }
     }
+
+    const loadDefaultVideo = () => {
+        if (videos.length > 0) {
+            fetchVideoDetails(videos[0].id);
+        }
+    };
 
     const fetchVideoDetails = async (id) => {
         if (!id) return;
 
         try {
             const response = await axios.get(
-                `${API_URL}/videos/${id}?api_key=${API_KEY}`
+                `${API_URL}/videos/${id}`
             );
             setSelectedVideo(response.data);
         } catch (error) {
             console.error("Error fetching video details", error);
-            navigate('/');
         }
     };
+
 
 
     useEffect(() => {
         fetchAllVideos();
     }, []);
+
+    useEffect(() => {
+        !id && loadDefaultVideo();
+    }, [id, videos]);
 
     useEffect(() => {
         fetchVideoDetails(id);
