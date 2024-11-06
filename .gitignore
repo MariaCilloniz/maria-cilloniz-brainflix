@@ -24,5 +24,4 @@ dist-ssr
 *.sln
 *.sw?
 
-README.md
-eslint.config.js
+.env
