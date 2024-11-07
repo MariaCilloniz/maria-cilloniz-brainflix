@@ -86,6 +86,7 @@
         background-color: $alabaster;
         resize: none;
         height: 6.25rem;
+        font-family: 'Avenir Next';
 
         @include tablet {
             width: calc(100% - 10.375rem);
