@@ -13,9 +13,9 @@ function HomePage() {
     const API_URL = import.meta.env.VITE_API_URL;
 
     const [selectedVideo, setSelectedVideo] = useState(null);
+    const navigate = useNavigate();
     const [videos, setVideos] = useState([]);
     const { id } = useParams();
-    const navigate = useNavigate();
 
     const fetchAllVideos = async () => {
         try {
@@ -27,6 +27,7 @@ function HomePage() {
             }
         } catch (error) {
             console.error("Error fetching videos", error);
+            navigate('/notfound');
         }
     }
 
@@ -46,10 +47,9 @@ function HomePage() {
             setSelectedVideo(response.data);
         } catch (error) {
             console.error("Error fetching video details", error);
+            navigate('/notfound');
         }
     };
-
-
 
     useEffect(() => {
         fetchAllVideos();
@@ -70,13 +70,24 @@ function HomePage() {
         return <p className="main-page__loading">Please Wait...</p>;
     }
 
+    const handleCommentAdded = async () => {
+        if (selectedVideo && selectedVideo.id) {
+            try {
+                const response = await axios.get(`${API_URL}/videos/${selectedVideo.id}`);
+                setSelectedVideo(response.data); 
+            } catch (error) {
+                console.error("Error refreshing video details", error);
+            }
+        }
+    };
+
     return (
         <main className="main-page">
             <VideoPlayer videoDetails={selectedVideo} />
             <div className="main">
                 <div className="main__content">
                     <VideoDetails videoDetails={selectedVideo} />
-                    <Conversation comments={selectedVideo.comments} />
+                    <Conversation comments={selectedVideo.comments} id={selectedVideo.id} onCommentAdded={handleCommentAdded} />
                     <Comments data={selectedVideo.comments} />
                 </div>
                 <div className="main__sidebar">
