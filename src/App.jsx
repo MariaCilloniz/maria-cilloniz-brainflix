@@ -15,7 +15,6 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          {/* <Route path="/videos" element={<HomePage />} /> */}
           <Route path="/videos/:id" element={<HomePage />} />
           <Route path="/upload" element={<UploadPage />} />
           <Route path="/notfound" element={<NotFoundPage />} />
