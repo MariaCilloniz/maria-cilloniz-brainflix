@@ -13,6 +13,7 @@ function HomePage() {
     const API_URL = import.meta.env.VITE_API_URL;
 
     const [selectedVideo, setSelectedVideo] = useState(null);
+    const navigate = useNavigate();
     const [videos, setVideos] = useState([]);
     const { id } = useParams();
 
@@ -26,6 +27,7 @@ function HomePage() {
             }
         } catch (error) {
             console.error("Error fetching videos", error);
+            navigate('/notfound');
         }
     }
 
@@ -45,6 +47,7 @@ function HomePage() {
             setSelectedVideo(response.data);
         } catch (error) {
             console.error("Error fetching video details", error);
+            navigate('/notfound');
         }
     };
 
